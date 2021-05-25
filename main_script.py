@@ -83,18 +83,17 @@ def run(input_list, column_name, count):
 
 
 # format dataframe
-df = format_data.remove_time(df)
 df = df.set_index(df['file'])  # set file name as index
 
 # path and event combinations
 event_type_combinations = format_data.get_combinations(event_types)
 num_combinations = len(event_type_combinations) + len(events)
-print('\nRunning', num_combinations, 'combinations of paths and events...')
+print('\nRunning', num_combinations, 'combinations of event types and events...')
 
 # run path and event combinations through model and get results
 count = 1
 event_results, count = run(events, 'event', count)
-path_results, _ = run(event_type_combinations, 'location', count)
+path_results, _ = run(event_type_combinations, 'event_type', count)
 
 all_results = pd.DataFrame()
 all_results = pd.concat([event_results, path_results])

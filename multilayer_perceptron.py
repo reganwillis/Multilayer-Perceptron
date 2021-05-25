@@ -7,6 +7,8 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 
+HIDDEN_LAYER_SIZE = 0  # placeholder
+
 
 def run_all_features(columns, features, target):
     """
@@ -51,7 +53,7 @@ def run_all_features(columns, features, target):
         score = run_model(X_train, X_test, y_train, y_test)
                 
         # fit model
-        clf = MLPClassifier(hidden_layer_sizes=(100, 100, 100), max_iter=EPOCHS,
+        clf = MLPClassifier(hidden_layer_sizes=(HIDDEN_LAYER_SIZE), max_iter=EPOCHS,
                             activation='', solver='', random_state=FIT_RS)
         clf = clf.fit(X_train, y_train)
 

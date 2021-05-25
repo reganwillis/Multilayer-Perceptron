@@ -7,32 +7,6 @@ import pandas as pd
 from itertools import combinations
 
 
-def remove_time(df):
-    """
-    Description
-    -----------
-    Removes time data from a dataframe. The dataframe
-    must have a column called 'sensor'.
-
-    Parameters
-    ----------
-    df      : pandas dataframe
-            Structure that time data will be removed from.
-
-    Returns
-    -------
-    df      : pandas dataframe
-            Input dataframe with time data removed
-    """
-
-    for i, row in df.iterrows():
-
-        if row['sensor'] == 'time':
-            df = df.drop(i)
-
-    return df
-
-
 def get_combinations(input_list):
     """
     Description

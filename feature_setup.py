@@ -4,9 +4,7 @@ This script restructures a dataframe.
 It creates the labels that go with the data and extracts the
 features the user wants out of three feature options.
 """
-import numpy as np
 import pandas as pd
-from scipy.signal import correlate
 from sklearn.preprocessing import StandardScaler
 
 feature_names = []
